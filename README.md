@@ -1,1 +1,0 @@
-# ghanime.github.io
