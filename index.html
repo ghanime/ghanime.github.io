@@ -12,8 +12,27 @@
     </h1>
     <br>
     <video controls width="75%" height="75%" id="video"></video>
+    <br>
+    <form>
+      <input type="radio" name="Beat saber" id="bs_radio" onclick="mainBS()">
+      <input type="radio" name="Funny meme" id="meme-radio" onclick="mainMeme()">
+    </form>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
     <script>
+      function mainBS() {
+        var video = document.getElementById('video');
+        var videoSrc = 'https://ghanime.github.io/test-1/VoD.m3u8';
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource(videoSrc);
+          hls.attachMedia(video);
+        }
+
+        else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+          video.src = videoSrc;
+        }
+      }
+      function mainMeme() {
         var video = document.getElementById('video');
         var videoSrc = 'https://ghanime.github.io/test-2/VoD.m3u8';
         if (Hls.isSupported()) {
@@ -25,6 +44,7 @@
         else if (video.canPlayType('application/vnd.apple.mpegurl')) {
           video.src = videoSrc;
         }
+      }
       </script>
     
 </body>
