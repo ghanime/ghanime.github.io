@@ -26,7 +26,28 @@
     <button onclick="episode_eleven()">Episode 11</button>
     <button onclick="episode_twelve()">Episode 12</button>
     <button onclick="movie()">Movie</button>
+    <br>
+    <button onclick="opening()">OP</button>
+    <button onclick="ending()">ED</button>
     <script>
+        function opening() {
+            var video = document.getElementById('player');
+            var videoSrc = 'https://raw.githubusercontent.com/ghanime/Youjo-Senki/main/OP/VoD.m3u8';
+            if (Hls.isSupported()) {
+                var hls = new Hls();
+                hls.loadSource(videoSrc);
+                hls.attachMedia(video);
+            }
+        }
+        function closing() {
+            var video = document.getElementById('player');
+            var videoSrc = 'https://raw.githubusercontent.com/ghanime/Youjo-Senki/main/ED/VoD.m3u8';
+            if (Hls.isSupported()) {
+                var hls = new Hls();
+                hls.loadSource(videoSrc);
+                hls.attachMedia(video);
+            }
+        }
         function movie() {
             var video = document.getElementById('player');
             var videoSrc = 'https://raw.githubusercontent.com/ghanime/Youjo-Senki/main/Movie/VoD.m3u8';
