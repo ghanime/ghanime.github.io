@@ -24,8 +24,23 @@
     <button onclick="mainShrekko()"> Shrekko</button>
     <button onclick="mainSAO()"> SAO Cool Fight</button>
     <button> <a href="youjosenki.html" class="unmarkedlink"> Youjo Senki </a></button>
+    <button onclick="mainTensura()"> Tensura S2 P2 E1</button>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
     <script>
+      function mainTensura() {
+        var video = document.getElementById('video');
+        var videoSrc = 'https://raw.githubusercontent.com/ghanime/tensuras2p1e1/main/VoD.m3u8';
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource(videoSrc);
+          hls.attachMedia(video);
+        }
+
+        else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+          video.src = videoSrc;
+        }
+      }
+      
       function mainBS() {
         var video = document.getElementById('video');
         var videoSrc = 'https://ghanime.github.io/test-1/VoD.m3u8';
