@@ -1,22 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link href="https://vjs.zencdn.net/7.17.0/video-js.css" rel="stylesheet" />
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DASH Testing</title>
+    <style>
+        a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+        }
+    </style>
 </head>
+
 <body>
     <video id="Player" controls width="80%">
         <!-- <source src="https://raw.githubusercontent.com/ghanime/Darling-OP/main/index.mpd" type="application/dash+xml"> -->
     </video>
-
+    <br>
+    <br>
+    <button><a href="index.html">Back</a></button>
     <script src="http://cdn.dashjs.org/latest/dash.all.min.js"></script>
     <script>
-        var url = "https://raw.githubusercontent.com/ghanime/Darling-OP/main/index.mpd";
-        var player = dashjs.MediaPlayer().create();
-        player.initialize(document.querySelector("#Player"), url, true);
+        function DarlingOP() {
+            var url = "https://raw.githubusercontent.com/ghanime/Darling-OP/main/index.mpd";
+            var player = dashjs.MediaPlayer().create();
+            player.initialize(document.querySelector("#Player"), url, true);
+        }
+
+        DarlingOP();
     </script>
 </body>
+
 </html>
