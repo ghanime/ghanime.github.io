@@ -23,20 +23,56 @@
     <button><a href="index.html">Back</a></button>
     <button onclick="DarlingOP()">Darling OP</button>
     <br>
+    <!-- <h1>Implemented:</H1> -->
+    <h1 id="implemented"></h1>
     <button onclick="AOChanE1()">AO-Chan Ep 1</button>
+    <button onclick="AOChanE2()">AO-Chan Ep 2</button>
+    <button onclick="AOChanE3()">AO-Chan Ep 3</button>
+    <button onclick="AOChanE4()">AO-Chan Ep 4</button>
+    <button onclick="AOChanE5()">AO-Chan Ep 5</button>
+    <button onclick="AOChanE6()">AO-Chan Ep 6</button>
+    <button onclick="AOChanE7()">AO-Chan Ep 7</button>
+    <button onclick="AOChanE8()">AO-Chan Ep 8</button>
+    <button onclick="AOChanE9()">AO-Chan Ep 9</button>
+    <button onclick="AOChanE10()">AO-Chan Ep 10</button>
+    <button onclick="AOChanE11()">AO-Chan Ep 11</button>
+    <button onclick="AOChanE12()">AO-Chan Ep 12</button>
     <script src="dash.all.min.js"></script>
     <script>
-        function AOChanE1() {
-            var url = "https://raw.githubusercontent.com/ghanime/AO-Chan/main/Episode%201/index.mpd";
-            var player = dashjs.MediaPlayer().create();
-            player.initialize(document.querySelector("#Player"), url, true);
-        }
-        function DarlingOP() {
-            var url = "https://raw.githubusercontent.com/ghanime/Darling-OP/main/index.mpd";
+
+        // Function Set for AO Chan
+        function AOChanE1() {Loader("https://raw.githubusercontent.com/ghanime/AO-Chan/main/Episode%201/index.mpd")}
+        function AOChanE2() {Loader("https://raw.githubusercontent.com/ghanime/AO-Chan/main/Episode%202/index.mpd")}
+        function AOChanE3() {Loader("https://raw.githubusercontent.com/ghanime/AO-Chan/main/Episode%203/index.mpd")}
+        function AOChanE4() {Loader("https://raw.githubusercontent.com/ghanime/AO-Chan/main/Episode%204/index.mpd")}
+        function AOChanE5() {Loader("https://raw.githubusercontent.com/ghanime/AO-Chan/main/Episode%205/index.mpd")}
+        function AOChanE6() {Loader("https://raw.githubusercontent.com/ghanime/AO-Chan/main/Episode%206/index.mpd")}
+        function AOChanE7() {Loader("https://raw.githubusercontent.com/ghanime/AO-Chan/main/Episode%207/index.mpd")}
+        function AOChanE8() {Loader("https://raw.githubusercontent.com/ghanime/AO-Chan/main/Episode%208/index.mpd")}
+        function AOChanE9() {Loader("https://raw.githubusercontent.com/ghanime/AO-Chan/main/Episode%209/index.mpd")}
+        function AOChanE10() {Loader("https://raw.githubusercontent.com/ghanime/AO-Chan/main/Episode%2010/index.mpd")}
+        function AOChanE11() {Loader("https://raw.githubusercontent.com/ghanime/AO-Chan/main/Episode%2011/index.mpd")}
+        function AOChanE12() {Loader("https://raw.githubusercontent.com/ghanime/AO-Chan/main/Episode%2012/index.mpd")}
+        
+        
+        function DarlingOP() {Loader("https://raw.githubusercontent.com/ghanime/Darling-OP/main/index.mpd")}
+
+        function Loader(url) {
             var player = dashjs.MediaPlayer().create();
             player.initialize(document.querySelector("#Player"), url, true);
         }
 
+        async function Implemented() {
+            fetch("https://raw.githubusercontent.com/ghanime/AO-Chan/main/index.json")
+                .then(res => res.json())
+                .then(data => data["Implemented"])
+                .then(function(impl) {
+                    document.getElementById("implemented").innerHTML = "Implemented: " + impl.toString();
+                });
+            
+        }
+
+        Implemented();
         DarlingOP();
     </script>
 </body>
