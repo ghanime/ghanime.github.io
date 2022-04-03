@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spood</title>
+    <script src="dash.all.min.js"></script>
+</head>
+<body>
+    <video id="foo" controls width="100%"></video>
+    <script>
+function Loader(url) {
+    var player = dashjs.MediaPlayer().create();
+    player.initialize(document.querySelector("#foo"), url, true);
+}
+Loader("https://raw.githubusercontent.com/ghanime/Spood/e5ed038df5538e601093ca19d5da6429ab3714cb/nwh.mpd");
+    </script>
+</body>
+</html>
