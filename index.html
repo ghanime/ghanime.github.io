@@ -1,20 +1,103 @@
 <!DOCTYPE html>
-<html>
-    <head>
-		<title>ACTP</title>
-		<script src="https://cdn.jsdelivr.net/npm/shaka-player@3.3.4/dist/shaka-player.compiled.min.js"></script>
-	</head>
-    <body>
-		<video id="video" width="640" height="360" controls>
-		<script>
-			var video = document.getElementById('video');
-			var player = new shaka.Player(video);
-			var manifestUri = 'https://raw.githubusercontent.com/ghanime/actp/master/index.mpd';
-			player.load(manifestUri).then(function() {
-				console.log('The video has now been loaded!');
-			}).catch(function(error) {
-				console.error('Error code', error.code, 'object', error);
-			});
-		</script>
-	</body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      a {
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+      }
+    </style>
+</head>
+<body>
+    <h1>
+        This is a video testing site
+    </h1>
+    <br>
+    <video controls width="80%" id="video"></video>
+    <br>
+    <button onclick="mainBS()"> Beat saber</button>
+    <button onclick="mainMeme()"> Funny Meme</button>
+    <button onclick="mainShrekko()"> Shrekko</button>
+    <button onclick="mainSAO()"> SAO Cool Fight</button>
+    <button> <a href="youjosenki.html" class="unmarkedlink"> Youjo Senki </a></button>
+    <button onclick="mainTensura()"> Tensura S2 P2 E1</button>
+    <button> <a href="DASH.html"> DASH Testing</a></button>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script>
+      
+      function mainTensura() {
+        var video = document.getElementById('video');
+        var videoSrc = 'https://raw.githubusercontent.com/ghanime/tensuras2p1e1/main/VoD.m3u8';
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource(videoSrc);
+          hls.attachMedia(video);
+        }
+
+        else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+          video.src = videoSrc;
+        }
+      }
+      
+      function mainBS() {
+        var video = document.getElementById('video');
+        var videoSrc = 'https://ghanime.github.io/test-1/VoD.m3u8';
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource(videoSrc);
+          hls.attachMedia(video);
+        }
+
+        else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+          video.src = videoSrc;
+        }
+      }
+      function mainMeme() {
+        var video = document.getElementById('video');
+        var videoSrc = 'https://ghanime.github.io/test-2/VoD.m3u8';
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource(videoSrc);
+          hls.attachMedia(video);
+        }
+
+        else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+          video.src = videoSrc;
+        }
+      }
+      function mainShrekko() {
+        var video = document.getElementById('video');
+        var videoSrc = 'https://raw.githubusercontent.com/ghanime/Shrekko/main/shrekko/VoD.m3u8';
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource(videoSrc);
+          hls.attachMedia(video);
+        }
+
+        else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+          video.src = videoSrc;
+        }
+      }
+
+      function mainSAO() {
+        var video = document.getElementById('video');
+        var videoSrc = 'https://raw.githubusercontent.com/ghanime/SAOFight/main/Fight_Video/VoD.m3u8';
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource(videoSrc);
+          hls.attachMedia(video);
+        }
+
+        else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+          video.src = videoSrc;
+        }
+      }
+// 
+      </script>
+    
+</body>
 </html>
